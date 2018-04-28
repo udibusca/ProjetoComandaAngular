@@ -1,0 +1,80 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8 col-md-7">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">{{titulo}}</h4>
+                </div>
+                <div class="content">
+                    <form novalidate [formGroup]="objForm" (ngSubmit)="onSubmit()">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label>Descrição</label>
+                                    <input type="text" class="form-control border-input" placeholder="Descrição" formControlName="descricao">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Valor</label>
+                                    <input type="text" class="form-control border-input" placeholder="Valor" formControlName="valor">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Categoria</label>
+                                    <select class="form-control border-input" formControlName="categoria">
+                                        <option *ngFor="let c of cat" [ngValue]="c.id">{{c.descricao}}</option>
+                                    </select>
+                                </div>
+                            </div>                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Estado</label>
+                                    <select class="form-control border-input" formControlName="situacao">
+                                        <option *ngFor="let sit of situacao" [ngValue]="sit">{{sit}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary" [disabled]="!objForm.valid">Salva</button>
+                            <button type="button" class="btn btn-warning" (click)="redirecionaProdutoPage()">Cancelar</button>
+                        </div>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-5" ng-if="!objForm">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">{{titulo2}}</h4>
+                </div>
+                <div class="content">
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Descrição</th>
+                                    <th>Valor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let ad of adicional">
+                                    <td><input id="checkbox1" type="checkbox"checked ></td>
+                                    <td>{{ad.descricao}}</td>
+                                    <td>R$ {{ad.valor}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>

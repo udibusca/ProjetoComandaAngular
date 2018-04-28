@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="header">
+          <div class="row">
+            <div class="col-xs-3">
+              <h4 class="title">{{titulo}}</h4>
+            </div>
+            <div class="col-xs-6"></div>
+            <div class="col-xs-3 text-right">
+              <button type="button" class="btn btn-primary" (click)="redirecionaNovaCategoriaPage()">Cadastrar</button>
+            </div>
+          </div>
+        </div>
+        <div class="content table-responsive table-full-width">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th class="text-center">ID</th>
+                <th>Descrição</th>
+                <th class="text-right">Ação</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let categoria of cat">
+                <th class="text-center">{{categoria.id}}</th>
+                <td>{{categoria.descricao}}</td>
+                <td class="td-actions text-right">
+                  <a class="btn btn-success btn-simple btn-xs" 
+                       rel="tooltip" title="" data-original-title="Editar"
+                       (click)="editaCategoriaPage(categoria)">
+                      <i class="ti-pencil-alt"></i>
+                  </a>
+                  <a class="btn btn-danger btn-simple btn-xs" 
+                      rel="tooltip" title="" data-original-title="Deletar"
+                      (click)="deletarCategoria(categoria)">
+                      <i class="ti-close"></i>
+                  </a>
+                </td>                
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

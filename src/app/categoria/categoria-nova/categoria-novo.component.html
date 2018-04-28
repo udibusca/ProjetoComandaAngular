@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8 col-md-7">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">{{titulo}}</h4>
+                </div>
+                <div class="content">
+                    <form novalidate [formGroup]="catForm" (ngSubmit)="onSubmit()">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Descrição</label>
+                                    <input type="text" class="form-control border-input" placeholder="Descrição" formControlName="descricao">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary"  [disabled]="!catForm.valid" >Salva</button>
+                            <button type="button" class="btn btn-warning" (click)="redirecionaCategoriaPage()">Cancelar</button>
+                        </div>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

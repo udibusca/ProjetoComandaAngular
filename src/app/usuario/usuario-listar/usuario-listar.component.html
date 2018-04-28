@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="header">
+          <div class="row">
+            <div class="col-xs-3">
+              <h4 class="title">{{titulo}}</h4>
+            </div>
+            <div class="col-xs-6"></div>
+            <div class="col-xs-3 text-right">
+              <button type="button" class="btn btn-primary" (click)="redirectNewUserPage()">Cadastrar</button>
+            </div>
+          </div>
+        </div>
+        <div class="content table-responsive table-full-width">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th class="text-center">ID</th>
+                <th>Nome</th>
+                <th>Usuário</th>
+                <th class="text-right">Ação</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users">
+                <th class="text-center">{{user.id}}</th>
+                <td>{{user.nome}}</td>
+                <td>{{user.usuario}}</td>
+                <td class="td-actions text-right">
+                  <a class="btn btn-success btn-simple btn-xs" 
+                       rel="tooltip" title="" data-original-title="Editar"
+                       (click)="editUserPage(user)">
+                      <i class="ti-pencil-alt"></i>
+                  </a>
+                  <a class="btn btn-danger btn-simple btn-xs" 
+                      rel="tooltip" title="" data-original-title="Deletar"
+                      (click)="deletarUsuario(user)">
+                      <i class="ti-close"></i>
+                  </a>
+                </td>                 
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
