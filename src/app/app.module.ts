@@ -34,6 +34,7 @@ import { ProdutoListarComponent } from './produto/produto-listar/produto-listar.
 import { ProdutoNovoComponent } from './produto/produto-nova/produto-novo.component';
 import { CategoriaService } from './categoria/categoria.service';
 import { HeroFormComponent } from './hero-form/hero-form.component';
+import { PedidoListarComponent } from './pedido/pedido-listar/pedido-listar.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { HeroFormComponent } from './hero-form/hero-form.component';
     MesaNovoComponent,
     ProdutoListarComponent,
     ProdutoNovoComponent,
-    HeroFormComponent
+    HeroFormComponent,
+    PedidoListarComponent
   ],
   imports: [
     HttpModule,

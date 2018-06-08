@@ -732,6 +732,11 @@ hr {
   opacity: 1;
   filter: alpha(opacity=100);
 }
+.sidebar .sidebar-wrapper .nav .caret {
+  margin-top: 12px;
+  position: absolute;
+  right: 1px;
+}
 .navbar .navbar-nav > li > a.btn-primary.btn-fill:hover, .navbar .navbar-nav > li > a.btn-primary.btn-fill:focus, .navbar .navbar-nav > li > a.btn-primary.btn-fill:active, .navbar .navbar-nav > li > a.btn-primary.btn-fill.active, .open > .navbar .navbar-nav > li > a.btn-primary.btn-fill.dropdown-toggle, .btn-primary.btn-fill:hover, .btn-primary.btn-fill:focus, .btn-primary.btn-fill:active, .btn-primary.btn-fill.active, .open > .btn-primary.btn-fill.dropdown-toggle {
   background-color: #427C89;
   color: #FFFFFF;

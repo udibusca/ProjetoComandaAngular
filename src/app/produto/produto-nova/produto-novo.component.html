@@ -26,6 +26,7 @@
                                 <div class="form-group">
                                     <label>Categoria</label>
                                     <select class="form-control border-input" formControlName="categoria">
+                                        <option>{{categorias.descricao}}</option>
                                         <option *ngFor="let c of cat" [ngValue]="c.id">{{c.descricao}}</option>
                                     </select>
                                 </div>

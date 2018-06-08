@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="header">
+          <div class="row">
+            <div class="col-xs-3">
+              <h4 class="title">{{titulo}}</h4>
+            </div>
+            <div class="col-xs-6"></div>
+            <div class="col-xs-3 text-right">
+            </div>
+          </div>
+        </div>
+        <div class="content table-responsive table-full-width">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th class="text-center">ID</th>
+                <th>Valor Total</th>
+                <th>Vendedor</th>
+                <th>Mesa</th>
+                <th>Estado</th>
+                <th>Data</th>
+                <th class="text-center">Ação</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let pedido of obj">
+                <th class="text-center">{{pedido.id}}</th>
+                <td>{{ pedido.valortotal | currency:'BRL':2 }}</td>
+                <td>{{pedido.usuario.nome}}</td>
+                <td>{{pedido.mesa.numero}}</td>
+                <td>{{pedido.estado == 0 ? 'Pendente' : 'Fechado'}}</td>
+                <td>{{pedido.datapedido | date: 'dd/MM/yyyy'}}</td>
+                <td class="td-actions text-center">
+                  <a class="btn btn-success btn-simple btn-xs" 
+                       rel="tooltip" title data-original-title="Visualizar"
+                       (click)="visualizarPedido(pedido)">
+                      <i class="ti-eye"></i>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

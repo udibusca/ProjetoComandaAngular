@@ -20,6 +20,7 @@ import { MesaNovoComponent } from './mesa/mesa-nova/mesa-novo.component';
 import { ProdutoListarComponent } from './produto/produto-listar/produto-listar.component';
 import { ProdutoNovoComponent } from './produto/produto-nova/produto-novo.component';
 import { HeroFormComponent } from './hero-form/hero-form.component';
+import { PedidoListarComponent } from './pedido/pedido-listar/pedido-listar.component';
 
 export const AppRoutes: Routes = [
     { path: '', redirectTo: 'dashboard', pathMatch: 'full', },
@@ -46,7 +47,7 @@ export const AppRoutes: Routes = [
     {path: 'produto', component: ProdutoListarComponent},
     {path: 'produto/novo', component: ProdutoNovoComponent},
     {path: 'produto/editar/:id', component: ProdutoNovoComponent},
-    {path: 'hero-form', component: HeroFormComponent}
-
+    {path: 'hero-form', component: HeroFormComponent},
+    {path: 'pedido', component: PedidoListarComponent}
 
 ]
